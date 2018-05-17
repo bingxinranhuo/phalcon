@@ -1,0 +1,140 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["user", "Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Edit user
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "user/save",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldMobile" class="col-sm-2 control-label">Mobile</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->selectStatic(["mobile", [], "class" => "form-control", "id" => "fieldMobile"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPartner" class="col-sm-2 control-label">Partner</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["partner", "size" => 30, "class" => "form-control", "id" => "fieldPartner"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["password", "size" => 30, "class" => "form-control", "id" => "fieldPassword"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldUserName" class="col-sm-2 control-label">User Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["user_name", "size" => 30, "class" => "form-control", "id" => "fieldUserName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldJname" class="col-sm-2 control-label">Jname</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["jname", "size" => 30, "class" => "form-control", "id" => "fieldJname"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldWebMode" class="col-sm-2 control-label">Web Of Mode</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["web_mode", "type" => "number", "class" => "form-control", "id" => "fieldWebMode"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldAccountStatus" class="col-sm-2 control-label">Account Of Status</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["account_status", "type" => "number", "class" => "form-control", "id" => "fieldAccountStatus"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldScore" class="col-sm-2 control-label">Score</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["score", "type" => "number", "class" => "form-control", "id" => "fieldScore"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldInviteUserId" class="col-sm-2 control-label">Invite Of User</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["invite_user_id", "type" => "number", "class" => "form-control", "id" => "fieldInviteUserId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldIsGiveInviteUserScore" class="col-sm-2 control-label">Is Of Give Of Invite Of User Of Score</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["is_give_invite_user_score", "type" => "number", "class" => "form-control", "id" => "fieldIsGiveInviteUserScore"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldStatus" class="col-sm-2 control-label">Status</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["status", "type" => "number", "class" => "form-control", "id" => "fieldStatus"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldLoginTime" class="col-sm-2 control-label">Login Of Time</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["login_time", "size" => 30, "class" => "form-control", "id" => "fieldLoginTime"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCreateTime" class="col-sm-2 control-label">Create Of Time</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["create_time", "size" => 30, "class" => "form-control", "id" => "fieldCreateTime"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldUpdateTime" class="col-sm-2 control-label">Update Of Time</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["update_time", "size" => 30, "class" => "form-control", "id" => "fieldUpdateTime"]) ?>
+    </div>
+</div>
+
+
+<?php echo $this->tag->hiddenField("id") ?>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
